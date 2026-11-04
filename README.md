@@ -4,7 +4,8 @@ A notification bell that unfolds into a notification tray, then reshapes itself 
 
 
 
-https://github.com/user-attachments/assets/47fdd3f3-0278-4ab1-a7af-38716cfc116f
+<img width="800" height="600" alt="km_20261104_1080p_60f_20261104_113202-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/a3a76fe1-8390-43ae-bc4c-5c0ccb25b09f" />
+
 
 
 
