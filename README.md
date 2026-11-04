@@ -197,30 +197,32 @@ The red dot on the badge is rendered independently and stays visible when `trigg
 
 ```text
 <NotifMorph>                        default export, memoized
-  ├─ NotifMorphToast                internal; sibling of the card
-  └─ morphing box
-      ├─ bell trigger              default Phosphor Bell or `triggerIcon`
-      ├─ MorphContentLayer         stage 1
-      │   └─ NotifMorphPanel        internal, memoized
-      │       └─ notification rows avatar + name + verified + meta/snippet/reply
-      ├─ MorphContentLayer         stage 2 (mounted when a profile is active)
-      │   └─ NotifMorphExpanded     named export
-      │       └─ MorphStaggerItem × up to 5
-      └─ MorphContentLayer         stage 3 (mounted when a notification is active)
-          └─ NotifMorphReply        named export
-              └─ MorphStaggerItem × up to 4
+  ├─ NotifMorphToast                internal (function, not memoized); sibling of the card
+  └─ morphing box (Animated.View)
+      ├─ bell trigger                Phosphor Bell or `triggerIcon`, cross-fades/scales with `openProgress`
+      ├─ MorphContentLayer           stage 1
+      │   └─ NotifMorphPanel         internal, memoized
+      │       └─ notification rows in ScrollView (viewport = first 3 measured rows)
+      ├─ MorphContentLayer           stage 2 (mounted when a profile is active)
+      │   └─ NotifMorphExpanded      named export, memoized
+      │       └─ MorphStaggerItem × 5 (header / bio / stats / mutuals / actions)
+      └─ MorphContentLayer           stage 3 (mounted when a profile + notification are active)
+          └─ NotifMorphReply         named export, memoized
+              └─ MorphStaggerItem × 4 (header / recipient / quote / composer)
 ```
 
-The internal `Stage` moves through four values:
+`NotifMorphToast` is rendered next to the card, not inside the morphing box.
 
-| Stage | Surface |
+The rendered surface is derived, not stored directly — an internal `stage` state is combined with `open` and `activeProfile` into `effectiveStage`:
+
+| `effectiveStage` | Surface |
 |---|---|
 | `0` | Collapsed bell badge |
 | `1` | Notification tray |
-| `2` | Actor profile card |
-| `3` | Reply/message composer |
+| `2` | Actor profile card (`activeProfile` set) |
+| `3` | Reply/message composer (`activeProfile` set + `stage === 3`) |
 
-`NotifMorphToast` is rendered next to the card, not inside the morphing box.
+Stage 2 and 3 require `activeProfile != null`; the stage 3 layer only mounts when both a profile and a notification are active.
 
 ---
 
