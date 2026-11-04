@@ -1,6 +1,6 @@
 # expo-notif-morph
 
-A notification bell that unfolds into a notification tray, then reshapes itself into a profile card and a reply composer — all inside one measured, morphing container.
+A notification icon that unfolds into a notification tray, then reshapes itself into a profile card and a reply composer — all inside one measured, morphing container.
 
 
 
@@ -13,7 +13,7 @@ A notification bell that unfolds into a notification tray, then reshapes itself 
 
 ## ✨ Features
 
-- 🔔 **Bell-to-tray morph** — the badge grows into the notification tray while its width, height, corner radius, and the bell's fade/scale animate from shared values.
+- 🔔 **Icon-to-tray morph** — the badge grows into the notification tray while its width, height, corner radius, and the bell's fade/scale animate from shared values.
 - 🗂️ **Three-row preview** — the tray viewport is built from the first three measured notification rows, so the remaining rows scroll without resizing the card.
 - 👤 **Tray-to-profile morph** — tapping a notification reshapes the same container into that actor's profile card.
 - 💬 **Profile-to-composer morph** — the message button opens a reply/message composer; reply notifications carry the quoted text into it.
