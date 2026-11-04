@@ -33,7 +33,7 @@ A notification bell that unfolds into a notification tray, then reshapes itself 
 This isn't published as an npm package yet — copy the source into your project.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ManasCodeXart/expo-notif-morph>
 ```
 
 Copy these files, preserving the `src/components`, `src/hooks`, and `src/constants` layout:
