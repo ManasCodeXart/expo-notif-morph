@@ -2,10 +2,11 @@
 
 A notification bell that unfolds into a notification tray, then reshapes itself into a profile card and a reply composer — all inside one measured, morphing container.
 
-<!-- TODO: replace this block with the hero GIF. -->
-<p align="center">
-  <em>🎞️ Hero GIF placeholder — bell → tray → profile → reply</em>
-</p>
+
+
+https://github.com/user-attachments/assets/47fdd3f3-0278-4ab1-a7af-38716cfc116f
+
+
 
 ---
 
@@ -80,21 +81,6 @@ npx expo install expo-font react-native-safe-area-context
 
 `expo-font` is only needed if you want to load the Manrope family; `react-native-safe-area-context` is only for the demo's safe-area-aware anchors — if you use it in your own screen, remember to wrap that screen in `<SafeAreaProvider>` (see [Usage](#-usage)). The component itself uses neither.
 
-> `NotifMorph` imports from `@/constants/...` and `@/hooks/...`. Map that alias to your source root:
->
-> ```json
-> {
->   "compilerOptions": {
->     "paths": {
->       "@/*": ["./src/*"]
->     }
->   }
-> }
-> ```
->
-> Or rewrite those imports to relative paths.
-
----
 
 ## 🚀 Usage
 
@@ -186,12 +172,6 @@ The red dot on the badge is rendered independently and stays visible when `trigg
 
 ---
 
-## Preview
-
-<!-- TODO: replace this block with the preview video. -->
-> 🎥 **Preview video placeholder** — add the full screen recording here.
-
----
 
 ## 🧱 Component Anatomy
 
